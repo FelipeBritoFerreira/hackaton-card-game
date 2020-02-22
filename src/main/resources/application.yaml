@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: cards-game
+  h2:
+    console:
+      enabled: true
+      path: /h2console
+  datasource:
+    url: jdbc:h2:file:~/test
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  jpa:
+    show-sql: true
+
+
+server:
+  port: 8080
+  servlet:
+    context-path: /hackaton
+    application-display-name: hackaton
+
+
+
