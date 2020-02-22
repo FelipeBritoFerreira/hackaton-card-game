@@ -4,6 +4,7 @@ import com.hackaton.cardsgame.model.User;
 import com.hackaton.cardsgame.service.TableService;
 import com.hackaton.cardsgame.vo.Card;
 import lombok.AllArgsConstructor;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,6 +18,7 @@ import java.util.UUID;
 @RestController
 @RequestMapping(value = "/api")
 @AllArgsConstructor
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class GameController {
 
     private final TableService tableService;
