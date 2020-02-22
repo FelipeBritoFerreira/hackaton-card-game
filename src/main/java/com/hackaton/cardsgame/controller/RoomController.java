@@ -1,31 +1,34 @@
 package com.hackaton.cardsgame.controller;
 
 import com.hackaton.cardsgame.model.Room;
+import com.hackaton.cardsgame.repository.RoomRepository;
 import com.hackaton.cardsgame.service.RoomService;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
-@RequestMapping(value = "/room")
+@RequestMapping(value = "/rooms")
 @AllArgsConstructor
 public class RoomController {
 
-    private final RoomService roomService;
+    private final RoomRepository roomRepository;
 
     @GetMapping
     public List<Room> getAllRooms() {
-        return roomService.getAllRooms();
+        return roomRepository.findAll();
     }
 
-    @PostMapping(value = "/save", consumes = "application/json")
+    @GetMapping(value = "{uuid}")
+    public Room getRoom(@PathVariable UUID uuid) {
+        return roomRepository.getOne(uuid);
+    }
+
+    @PostMapping
     public void save(@RequestBody Room room) {
-        roomService.save(room);
+        roomRepository.save(room);
     }
 
 }

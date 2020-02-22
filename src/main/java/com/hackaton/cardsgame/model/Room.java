@@ -24,4 +24,5 @@ public class Room {
 
     @OneToMany
     private List<User> users;
+
 }
