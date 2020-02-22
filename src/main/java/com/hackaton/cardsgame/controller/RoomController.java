@@ -31,7 +31,7 @@ public class RoomController {
     }
 
     @PostMapping
-    public Room save(@RequestBody Room room) {
+    public Room create(@RequestBody Room room) {
         return roomRepository.save(room);
     }
 
