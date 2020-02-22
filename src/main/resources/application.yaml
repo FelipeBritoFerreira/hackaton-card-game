@@ -12,7 +12,9 @@ spring:
     driver-class-name: org.h2.Driver
   jpa:
     show-sql: true
-
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
 
 server:
   port: 8888
