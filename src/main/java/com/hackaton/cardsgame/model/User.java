@@ -19,7 +19,4 @@ public class User {
     private UUID uuid;
     @Column
     private String name;
-
-    @ManyToOne
-    private Room room;
 }
