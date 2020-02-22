@@ -18,7 +18,7 @@ import java.util.Comparator;
 
 public class Card implements Comparable<Card> {
 
-  public static final Card $AC = new Card(Rank.ACE, Suit.CLUBS);
+	public static final Card $AC = new Card(Rank.ACE, Suit.CLUBS);
   public static final Card $AD = new Card(Rank.ACE, Suit.DIAMONDS);
   public static final Card $AH = new Card(Rank.ACE, Suit.HEARTS);
   public static final Card $AS = new Card(Rank.ACE, Suit.SPADES);
