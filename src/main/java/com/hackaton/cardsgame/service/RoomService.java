@@ -20,8 +20,4 @@ public class RoomService {
     public void save(Room room) {
         roomRepository.save(room);
     }
-
-
-
-
 }
